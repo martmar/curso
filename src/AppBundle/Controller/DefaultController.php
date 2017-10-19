@@ -37,7 +37,7 @@ class DefaultController extends Controller
      */
     public function hello2Action()
     {
-        $nombre = "Carlos";
+        $nombre = "mar";
 
         return $this->render('default/holamundo.html.twig');
     }
@@ -47,10 +47,11 @@ class DefaultController extends Controller
      */
     public function hello3Action()
     {
-        $nombre = "Carlos";
+        $nombre = "mar";
+        $otrodato = "otro dato";
 
-        return $this->render('hola/mundo.html.twig', array(
-            'name' => $nombre,
+        return $this->render('default/holamundo-i18n.html.twig', array(
+            'name' => $nombre, 'libro' => $otrodato
         ));
     }
 
@@ -59,7 +60,7 @@ class DefaultController extends Controller
      */
     public function hello4Action()
     {
-        $nombre = "Carlos";
+        $nombre = "mar";
 
         return $this->render('default/mundo-upm.html.twig', array(
             'name' => $nombre,
