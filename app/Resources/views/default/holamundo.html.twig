@@ -1,5 +1,11 @@
 <html>
     <body>
         <h1>Hello world</h1>
+        {{ _charset }}
+        {{ dump(_context) }}
+        {% for i in 0..10 %}
+    			* {{ i }} -> Iteración: {{ loop.index }} <br/>
+        {% endfor %}
+        <h1></h1>
     </body>
 </html>

@@ -47,11 +47,11 @@ class DefaultController extends Controller
      */
     public function hello3Action()
     {
-        $nombre = "mar";
-        $otrodato = "otro dato";
+        $nombre = "Mar";
+        $apellido = "Martínez";
 
         return $this->render('default/holamundo-i18n.html.twig', array(
-            'name' => $nombre, 'libro' => $otrodato
+            'name' => $nombre, 'apellido' =>$apellido
         ));
     }
 
@@ -64,6 +64,20 @@ class DefaultController extends Controller
 
         return $this->render('default/mundo-upm.html.twig', array(
             'name' => $nombre,
+        ));
+    }
+    
+    /**
+     * @Route("/planestudios")
+     */
+    public function planestudiosAction()
+    {
+        $planestudios = 'A014';
+        $asigManager = new \AppBundle\Service\Mock\AsignaturasManager();
+        $asignaturas = $asigManager->get($planestudios);
+        
+        return $this->render('default/planestudios.html.twig', array(
+            'asignaturas' => $asignaturas,
         ));
     }
 

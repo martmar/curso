@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <h1>{{ 'Listado de asignaturas'|trans }}</h1>
+        <h2>{{ "now"|date('d-m-Y') }}</h2>
+        <table>
+        			<tr>
+        				<th>{{ 'Nombre'|trans }}</th>
+        				<th>{{ 'Codigo'|trans }}</th>
+        				<th>{{ 'ECTS'|trans }}</th>
+        			</tr>
+        {% for i in asignaturas %}
+        			<tr style="background-color:{{  loop.index is odd  ? 'lightgrey' : 'white' }}">
+            		<td> {{ app.request.locale == 'es' ? i.nombre : i.nombreIngles }}</td>
+    				<td>{{ i.codigo }}</td>
+    				<td>{{ i.credects }}</td>
+    				</tr>
+        {% endfor %}
+        </table>
+        <hr/>
+        {{ dump(_context) }}
+       	<hr/>
+    </body>
+</html>
